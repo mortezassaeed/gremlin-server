@@ -1,0 +1,12 @@
+services:
+  graph:
+    image: tinkerpop/gremlin-server:3.7.2
+    ports:
+      - 8182:8182
+    volumes:
+      - ./gremlin-server:/opt/gremlin-server/conf
+      - ./gremlin-server:/conf
+      - graph-data:/opt/gremlin-server/data
+
+volumes:
+  graph-data:
